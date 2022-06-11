@@ -9,7 +9,7 @@ jobs:
     - id: Build-Vue
       uses: xRealNeon/VuePagesAction@1.0.1
       with:
-        username: 'Nobody5050'
-        reponame: 'quiz'
+        username: 'NENC-Hackathons'
+        reponame: 'onehacks-ii'
         token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
         useyarn: true
