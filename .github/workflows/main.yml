@@ -12,3 +12,4 @@ jobs:
         username: 'Nobody5050'
         reponame: 'quiz'
         token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+        useyarn: true
