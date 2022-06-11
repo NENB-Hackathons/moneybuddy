@@ -1,24 +1,32 @@
-<template>
-<h1>register page</h1>
+<template >
+<div class="bg-gray-900 text-white flex flex-col h-screen" >
   <Nav></Nav>
+  <h1>register page</h1>
   <form @submit.prevent="register">
     <div>
       <label for="username">username</label>
-      <input name="username" v-model="username" placeholder="username">
+      <input name="username" v-model="username" placeholder="username" class="text-black" />
     </div>
     <div>
       <label for="password">password</label>
-      <input name="password" v-model="password" placeholder="password" type="password">
+      <input
+        name="password"
+        v-model="password"
+        placeholder="password"
+        type="password"
+        class="text-black"
+      />
     </div>
-    <input type="submit" value="register">
+    <input type="submit" value="register" />
   </form>
+  </div>
 </template>
 
 <script>
-import Nav from '../components/Nav.vue';
+import Nav from "../components/Nav.vue";
 
 export default {
-  name: 'Register',
+  name: "Register",
   data() {
     return {
       username: "",
@@ -28,26 +36,23 @@ export default {
   },
   methods: {
     async register() {
-      const {username, password} = this;
-      const res = await fetch(
-        "http://127.0.0.1:8000/users/register",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            username,
-            password,
-          })
-        }
-      );
+      const { username, password } = this;
+      const res = await fetch("http://127.0.0.1:8000/users/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      });
       const data = await res.json();
       console.log(data);
-    }
+    },
   },
   components: {
-    Nav
-  }
-}
+    Nav,
+  },
+};
 </script>
