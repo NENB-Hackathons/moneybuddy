@@ -1,6 +1,5 @@
 <template >
 <div class="bg-gray-900 text-white flex flex-col h-screen" >
-  <Nav></Nav>
   <h1>register page</h1>
   <form @submit.prevent="register">
     <div>
@@ -23,8 +22,6 @@
 </template>
 
 <script>
-import Nav from "../components/Nav.vue";
-
 export default {
   name: "Register",
   data() {
@@ -52,7 +49,6 @@ export default {
     },
   },
   components: {
-    Nav,
   },
 };
 </script>
