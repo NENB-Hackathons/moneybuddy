@@ -32,16 +32,16 @@
         >
           budget plan
         </div>
-        <div class="flex items-center h-8 ml-1">to your needs.</div>
+        <div class="flex items-center h-8 ml-1">to your needs. <div class="ml-2 text-gray-300">step {{$store.state.modalStage}}/6</div></div>
       </div>
       <div
         class="h-11/12 w-full inline-flex flex-col items-center justify-center"
       >
         <div class="font-semibold text-white m-2">
-          Sample question here : {{ $store.state.modalStage }}
+          {{$store.state.questions[$store.state.modalStage-1]}}
         </div>
         <div
-          v-if="this.$store.state.modalStage !== 1"
+          v-if="this.$store.state.modalStage < 6 && this.$store.state.modalStage > 1"
           class="inline-flex justify-center items-center"
         >
           <div
@@ -108,11 +108,11 @@
             no
           </div>
         </div>
-        <div v-else class="inline-flex justify-between items-center">
+        <div v-else-if="this.$store.state.modalStage === 1" class="inline-flex justify-between items-center">
           <input
             name="income"
             v-model="income"
-            class="h-9 w-48 rounded-3xl outline-none"
+            class="h-9 w-48 rounded-3xl outline-none px-4"
           />
           <div
             @click="nextStep()"
@@ -136,12 +136,40 @@
             continue
           </div>
         </div>
+        <div v-else class="inline-flex flex-col justify-center items-center">
+          <h1 class="text-gray-300 font-semibold m-2 text-lg">
+            You are all set!
+          </h1>
+          <div
+            @click="nextStep()"
+            class="
+              flex
+              items-center
+              justify-center
+              select-none
+              px-6
+              py-2
+              font-semibold
+              rounded-3xl
+              bg-indigo-600
+              hover:bg-indigo-700
+              text-gray-300
+              cursor-pointer
+              duration-200
+              m-1
+            "
+          >
+            close
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios"
+
 export default {
   name: "Questionaire",
   data() {
@@ -165,8 +193,16 @@ export default {
       this.$store.commit("updateModalState", this.modalStage);
     },
     nextStep(answer) {
-      this.$store.commit("updateModalState", this.modalStage);
-      this.$store.commit("updateQuestionsSum", answer);
+    if(this.modalStage < 6) {
+        this.$store.commit("updateModalState", this.modalStage);
+        this.$store.commit("updateQuestionsSum", answer);
+    }else {
+        this.$store.commit("showModal", false);
+        let url = "http://127.0.0.1:8000/users/"+this.$store.state.unsername+"+/budgetCalculate"
+        axios.post(url,{
+            "token":this.$store.state.token
+        })
+    }
     },
   },
 };

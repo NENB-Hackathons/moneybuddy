@@ -3,8 +3,15 @@ import { createStore } from "vuex"
 export default createStore({
     state: {
         modalStage: 1,
-        showModal: false,
+        showModal: true,
         questionsSum: 0,
+        questions: [
+            'What is your net yearly salary in USD?',
+            'Do you think about yourself as a saver/investor?',
+            'Are you spending money on wants? (eg, electronics, clothes, leisure items, ect..)',
+            'Are you the main household earner?',
+            'Final Question, do you need to spend on others needs? (Food, shelter, ect..)',
+        ],
         userIncome: 0,
         isLoggedIn: localStorage.getItem('isLoggedIn') ? true : false,
         username: localStorage.getItem('username') ? localStorage.getItem('username') : '',
