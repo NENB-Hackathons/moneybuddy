@@ -13,3 +13,4 @@ jobs:
         reponame: 'onehacks-ii'
         token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
         useyarn: true
+        cname: 'moneybuddy.tech'
