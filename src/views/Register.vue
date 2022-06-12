@@ -143,6 +143,7 @@
               v-on:click="register"
             >
               Create Account
+              <!-- Navigate to dashboard after register -->
             </button>
           </div>
         </form>

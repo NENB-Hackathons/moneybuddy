@@ -151,6 +151,7 @@
               v-on:click="register"
             >
               Log in
+                <!-- Navigate to dashboard after register -->
             </button>
           </div>
         </form>
@@ -161,6 +162,7 @@
 
 <script>
 import axios from "axios";
+import router from '@/router'
 
 export default {
   name: "Login",
@@ -172,8 +174,8 @@ export default {
     };
   },
   methods: {
-    async register() {
-      const { username, password, email } = this;
+    register() {
+      const { username, password, email } = this
       axios
         .post("http://127.0.0.1:8000/users/login", {
           username: username,
@@ -181,12 +183,17 @@ export default {
           email: email,
         })
         .then(function (response) {
-          console.log(response);
+          if(response.data.code === 200) {
+            localStorage.setItem('token', response.data.token)
+            localStorage.setItem('username', response.data.username)
+            localStorage.setItem('isLoggedIn', true)
+            router.push('/dashboard')
+          }
         })
         .catch(function (error) {
-          console.log(error);
+          console.log(error)
         });
-    },
+    }
   },
   components: {},
 };

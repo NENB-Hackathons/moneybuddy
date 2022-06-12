@@ -4,7 +4,6 @@ export default createStore({
     state: {
         modalStage: 1,
         showModal: false,
-        isLoggedIn: false,
         questionsSum: 0,
         userIncome: 0,
     },
@@ -25,8 +24,8 @@ export default createStore({
         showModal(state, show) {
             state.showModal = show
         },
-        settLoggedIn(state, isLoggedIn) {
-            state.isLoggedIn = isLoggedIn
+        setLoggedIn(state, param) {
+            state.isLoggedIn = param
         },
         updateIncome(state, income) {
             state.userIncome = income

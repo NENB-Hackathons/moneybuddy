@@ -17,7 +17,7 @@
     >
       MoneyBuddy
     </router-link>
-    <div class="flex items-center m-8 font-semibold text-gray-300">
+    <div v-if="!isLoggedIn" class="flex items-center m-8 font-semibold text-gray-300">
       <router-link to="login" class="m-2 cursor-pointer hover:text-gray-400">
         Login
       </router-link>
@@ -37,12 +37,40 @@
         Register
       </router-link>
     </div>
+    <div v-else class="flex items-center m-8 font-semibold text-gray-300">
+      <router-link to="login" class="m-2 cursor-pointer hover:text-gray-400">
+        Login
+      </router-link>
+      <router-link
+        to="register"
+        class="
+          m-4
+          text-gray-300
+          cursor-pointer
+          bg-indigo-600
+          px-7
+          py-2
+          rounded-3xl
+          hover:bg-indigo-700
+        "
+      >
+        something
+      </router-link>
+    </div>
   </div>
 </template>
 
   <script>
+  let isLoggedIn = localStorage.getItem("isLoggedIn")
+  if (isLoggedIn === undefined) isLoggedIn = false
+  console.log(isLoggedIn)
 export default {
   name: "Nav",
   props: {},
+  data () {
+    return {
+      isLoggedIn: isLoggedIn
+    }
+  },
 };
 </script>
