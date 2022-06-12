@@ -152,6 +152,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: "Login",
   data() {
@@ -164,20 +166,18 @@ export default {
   methods: {
     async register() {
       const { username, password, email} = this;
-      const res = await fetch("http://127.0.0.1:8000/users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username,
-          password,
-          email
-        }),
-      });
-      const data = await res.json();
-      console.log(data);
-    },
+      axios.post('http://127.0.0.1:8000/users/login', {
+        username: username,
+        password: password,
+        email: email
+      })
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+    }
   },
   components: {},
 };
