@@ -163,6 +163,7 @@
 <script>
 import axios from "axios";
 import router from '@/router'
+import store from '@/store'
 
 export default {
   name: "Login",
@@ -187,6 +188,9 @@ export default {
             localStorage.setItem('token', response.data.token)
             localStorage.setItem('username', response.data.username)
             localStorage.setItem('isLoggedIn', true)
+            store.commit('setUsername', response.data.username)
+            store.commit('setLoggedIn', true)
+            store.commit('updateToken', response.data.token)
             router.push('/dashboard')
           }
         })

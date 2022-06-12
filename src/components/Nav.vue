@@ -17,7 +17,7 @@
     >
       MoneyBuddy
     </router-link>
-    <div v-if="!isLoggedIn" class="flex items-center m-8 font-semibold text-gray-300">
+    <div v-if="!this.$store.state.isLoggedIn" class="flex items-center m-8 font-semibold text-gray-300">
       <router-link to="login" class="m-2 cursor-pointer hover:text-gray-400">
         Login
       </router-link>
@@ -46,15 +46,14 @@
 </template>
 
   <script>
-  let isLoggedIn = localStorage.getItem("isLoggedIn")
-  if (isLoggedIn === undefined) isLoggedIn = false
-  console.log(localStorage)
+  import store from '@/store'
+  let loggedin = store.state.isLoggedIn
 export default {
   name: "Nav",
   props: {},
   data () {
     return {
-      isLoggedIn: isLoggedIn
+      loggedin
     }
   },
   methods: {
@@ -62,6 +61,10 @@ export default {
       localStorage.removeItem("isLoggedIn")
       localStorage.removeItem("username")
       localStorage.removeItem("token")
+      store.commit('setUsername', undefined)
+      store.commit('setLoggedIn', false)
+      store.commit('updateToken', undefined)
+      this.$router.push('/')
     }
   }
 }
