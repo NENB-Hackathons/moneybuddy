@@ -17,14 +17,20 @@
                 <div class=" font-semibold text-white m-2">
                     Sample question here : {{$store.state.modalStage}}
                 </div>
-                <div class="inline-flex justify-center items-center">
-                    <div @click="nextStep" class="flex items-center justify-center select-none px-7 py-2 font-semibold rounded-3xl bg-indigo-600 hover:bg-indigo-700 text-gray-300 cursor-pointer duration-200 m-1">
+                <div v-if="this.$store.state.modalStage !== 1" class="inline-flex justify-center items-center">
+                    <div @click="nextStep(2)" class="flex items-center justify-center select-none px-7 py-2 font-semibold rounded-3xl bg-indigo-600 hover:bg-indigo-700 text-gray-300 cursor-pointer duration-200 m-1">
                         yes
                     </div>
-                    <div @click="nextStep" class="flex items-center justify-center select-none px-7 py-2 font-semibold rounded-3xl bg-indigo-600 hover:bg-indigo-700 text-gray-300 cursor-pointer duration-200 m-1">
+                    <div @click="nextStep(1)" class="flex items-center justify-center select-none px-7 py-2 font-semibold rounded-3xl bg-indigo-600 hover:bg-indigo-700 text-gray-300 cursor-pointer duration-200 m-1">
                         maybe
                     </div>
-                    <div @click="nextStep" class="flex items-center justify-center select-none px-7 py-2 font-semibold rounded-3xl bg-indigo-600 hover:bg-indigo-700 text-gray-300 cursor-pointer duration-200 m-1">
+                    <div @click="nextStep(0)" class="flex items-center justify-center select-none px-7 py-2 font-semibold rounded-3xl bg-indigo-600 hover:bg-indigo-700 text-gray-300 cursor-pointer duration-200 m-1">
+                        no
+                    </div>
+                </div>
+                <div v-else class="inline-flex justify-center items-center">
+                    <input class="h-8 py-2 w-48 rounded-3xl outline-none"/>
+                    <div @click="nextStep(0)" class="flex items-center justify-center select-none px-7 py-2 font-semibold rounded-3xl bg-indigo-600 hover:bg-indigo-700 text-gray-300 cursor-pointer duration-200 m-1">
                         no
                     </div>
                 </div>
@@ -39,14 +45,17 @@ export default {
     computed: {
         modalStage(){
             return this.$store.state.modalStage
-        }
+        },
+        questionArray(){
+            return this.$store.state.questionsArray
+        },
     },
     methods: {
-        nextStep() {
-           this.$store.commit('updateModalState',this.modalStage+1)
+        nextStep(answer) {
+           this.$store.commit('updateModalState',this.modalStage)
+           this.$store.commit('appendQuestion',answer)
         }
-
-  }
+    }
   }
 
 </script>
