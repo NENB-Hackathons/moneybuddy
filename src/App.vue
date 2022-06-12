@@ -1,4 +1,5 @@
 <template>
+  <title>MoneyBuddy</title>
   <div
     class="inline-flex flex-col justify-between items h-screen w-screen z-50"
   >
