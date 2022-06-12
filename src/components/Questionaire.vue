@@ -4,7 +4,7 @@
         <div class="inline-flex flex-col  bg-gray-800 h-2/3 w-2/3 z-50 rounded-lg">
            <div class="inline-flex flex-row justify-center  mt-4  font-semibold text-white h-1/12 w-full border-b border-gray-700">
                 <div class="flex items-center h-8 mr-1">
-                    We need to ask some questins to tailor your
+                    We need to ask some questions to tailor your
                 </div>
                 <div class="bg-indigo-600 text-white h-8 flex items-center justify-center p-1 rounded-md">
                     budget plan
