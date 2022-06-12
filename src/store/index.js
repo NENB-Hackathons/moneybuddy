@@ -6,6 +6,9 @@ export default createStore({
         showModal: false,
         questionsSum: 0,
         userIncome: 0,
+        isLoggedIn: localStorage.getItem('isLoggedIn') ? true : false,
+        username: localStorage.getItem('username') ? localStorage.getItem('username') : '',
+        token: localStorage.getItem('token') ? localStorage.getItem('token') : '',
     },
     mutations: {
         updateQuestionsSum(state, answer) {
@@ -26,6 +29,12 @@ export default createStore({
         },
         setLoggedIn(state, param) {
             state.isLoggedIn = param
+        },
+        setUsername(state, username) {
+            state.username = username
+        },
+        setUserIncome(state, income) {
+            state.userIncome = income
         },
         updateIncome(state, income) {
             state.userIncome = income

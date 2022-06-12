@@ -38,24 +38,9 @@
       </router-link>
     </div>
     <div v-else class="flex items-center m-8 font-semibold text-gray-300">
-      <router-link to="login" class="m-2 cursor-pointer hover:text-gray-400">
-        Login
-      </router-link>
-      <router-link
-        to="register"
-        class="
-          m-4
-          text-gray-300
-          cursor-pointer
-          bg-indigo-600
-          px-7
-          py-2
-          rounded-3xl
-          hover:bg-indigo-700
-        "
-      >
-        something
-      </router-link>
+      <div @click="logout" class="m-2 cursor-pointer hover:text-gray-400">
+        logout
+      </div>
     </div>
   </div>
 </template>
@@ -63,7 +48,7 @@
   <script>
   let isLoggedIn = localStorage.getItem("isLoggedIn")
   if (isLoggedIn === undefined) isLoggedIn = false
-  console.log(isLoggedIn)
+  console.log(localStorage)
 export default {
   name: "Nav",
   props: {},
@@ -72,5 +57,12 @@ export default {
       isLoggedIn: isLoggedIn
     }
   },
-};
+  methods: {
+    logout() {
+      localStorage.removeItem("isLoggedIn")
+      localStorage.removeItem("username")
+      localStorage.removeItem("token")
+    }
+  }
+}
 </script>
