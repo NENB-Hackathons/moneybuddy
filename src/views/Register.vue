@@ -153,7 +153,9 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from "axios"
+import store from '@/store'
+import router from '@/router'
 export default {
   name: "Register",
   data() {
@@ -173,7 +175,13 @@ export default {
           email: email,
         })
         .then(function (response) {
-          console.log(response);
+            localStorage.setItem('token', response.data.token)
+            localStorage.setItem('username', response.data.username)
+            localStorage.setItem('isLoggedIn', true)
+            store.commit('setUsername', response.data.username)
+            store.commit('setLoggedIn', true)
+            store.commit('updateToken', response.data.token)
+            router.push('/dashboard')
         })
         .catch(function (error) {
           console.log(error);
