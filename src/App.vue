@@ -1,7 +1,7 @@
 <template>
   <div class="inline-flex flex-col justify-between items h-screen w-screen z-50">
     <Nav></Nav>
-    <Questionaire></Questionaire>
+    <Questionaire v-if="$store.state.showModal"></Questionaire>
     <router-view/>
     <Footer></Footer>
   </div>

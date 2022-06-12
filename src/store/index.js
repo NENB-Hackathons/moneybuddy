@@ -2,16 +2,22 @@ import { createStore } from "vuex"
 
 export default createStore({
     state: {
-        token: "",
         modalStage: 1,
         showModal: false,
         isLoggedIn: false,
-        questionArray: [],
+        questionsSum: 0,
         userIncome: 0,
     },
     mutations: {
+        updateQuestionsSum(state, answer) {
+            state.questionsSum += answer
+        },
         updateModalState(state) {
-            state.modalStage += 1
+            if (state.modalStage < 6) {
+                state.modalStage += 1
+                return
+            }
+            state.showModal = false
         },
         updateToken(state, token) {
             state.token = token

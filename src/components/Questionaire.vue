@@ -64,7 +64,7 @@ export default {
         },
         nextStep(answer) {
            this.$store.commit('updateModalState',this.modalStage)
-           this.$store.commit('appendQuestion',answer)
+           this.$store.commit('updateQuestionsSum',answer)
         }
     }
   }
