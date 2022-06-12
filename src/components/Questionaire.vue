@@ -15,16 +15,16 @@
            </div>
            <div class="h-11/12 w-full inline-flex flex-col items-center justify-center">
                 <div class=" font-semibold text-white m-2">
-                    Sample question here :
+                    Sample question here : {{$store.state.modalStage}}
                 </div>
                 <div class="inline-flex justify-center items-center">
-                    <div @click="inc" class="flex items-center justify-center px-7 py-2 font-semibold rounded-3xl bg-indigo-600 hover:bg-indigo-700 text-gray-300 cursor-pointer duration-200 m-1">
+                    <div @click="nextStep" class="flex items-center justify-center select-none px-7 py-2 font-semibold rounded-3xl bg-indigo-600 hover:bg-indigo-700 text-gray-300 cursor-pointer duration-200 m-1">
                         yes
                     </div>
-                    <div class="flex items-center justify-center px-7 py-2 font-semibold rounded-3xl bg-indigo-600 hover:bg-indigo-700 text-gray-300 cursor-pointer duration-200 m-1">
+                    <div @click="nextStep" class="flex items-center justify-center select-none px-7 py-2 font-semibold rounded-3xl bg-indigo-600 hover:bg-indigo-700 text-gray-300 cursor-pointer duration-200 m-1">
                         maybe
                     </div>
-                    <div class="flex items-center justify-center px-7 py-2 font-semibold rounded-3xl bg-indigo-600 hover:bg-indigo-700 text-gray-300 cursor-pointer duration-200 m-1">
+                    <div @click="nextStep" class="flex items-center justify-center select-none px-7 py-2 font-semibold rounded-3xl bg-indigo-600 hover:bg-indigo-700 text-gray-300 cursor-pointer duration-200 m-1">
                         no
                     </div>
                 </div>
@@ -36,14 +36,17 @@
 <script>
 export default {
     name: "Questionaire",
-    props: {},
+    computed: {
+        modalStage(){
+            return this.$store.state.modalStage
+        }
+    },
     methods: {
-        inc() {
-           let id = this.$store.state.isLoggedIn
-           console.log(id)
+        nextStep() {
+           this.$store.commit('updateModalState',this.modalStage+1)
         }
 
-  },
+  }
   }
 
 </script>
