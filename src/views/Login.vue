@@ -1,5 +1,5 @@
 <template >
-  <div class="flex justify-center items-start bg-gray-100 dark:bg-gray-800">
+  <div class="flex flex-grow justify-center items-start bg-gray-100 dark:bg-gray-800">
     <div
       class="
         container
