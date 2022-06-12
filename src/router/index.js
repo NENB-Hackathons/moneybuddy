@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 
+import store from '@/store'
+let loggedin = store.state.isLoggedIn
+
 const routes = [{
   path: "/",
   name: "Home",
@@ -21,6 +24,11 @@ const routes = [{
 {
   path: "/dashboard",
   name: "Dashboard",
+  beforeEnter: function(to, from, next){
+    if (!loggedin) {
+      next('/')
+    }
+  },
   meta: {
     isLoggedIn: true
   },
