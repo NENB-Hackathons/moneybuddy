@@ -43,7 +43,7 @@
               type="email"
               name="email"
               id="email"
-              placeholder="Your email address (optional)"
+              placeholder="Email (optional)"
               required
               class="
                 w-full
@@ -76,7 +76,7 @@
               type="text"
               name="username"
               id="username"
-              placeholder="Your Prefered Username"
+              placeholder="Username"
               class="
                 w-full
                 px-3
@@ -110,7 +110,7 @@
               type="password"
               name="password"
               id="password"
-              placeholder="Your password"
+              placeholder="Password"
               required
               class="
                 w-full
