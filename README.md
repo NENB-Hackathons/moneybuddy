@@ -1,24 +1,27 @@
-# onehacks-ii
+# MoneyBuddy
 
-## Project setup
-```
-yarn install
-```
+MoneyBuddy is a application that helps you be smart with your financials. It was built in 48 hours for the OneHacks2 hackathon. See the [Devpost](https://devpost.com/software/moneybuddy-hwf0um).
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Installation
 
-### Compiles and minifies for production
-```
-yarn build
+Clone the repository and run the following command in it to install dependencies (you need to have yarn installed beforehand)
+
+```bash
+yarn
 ```
 
-### Lints and fixes files
-```
-yarn lint
+## Deployment
+
+Run the frontend web server with 
+
+```bash
+yarn server
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Note that the website won't work at all if you don't have the [backend](https://github.com/NENC-Hackathons/onehacksii-backend) running!
+
+## Contributing
+Pull requests are very welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
