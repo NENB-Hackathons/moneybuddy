@@ -28,10 +28,10 @@
                         no
                     </div>
                 </div>
-                <div v-else class="inline-flex justify-center items-center">
-                    <input class="h-8 py-2 w-48 rounded-3xl outline-none"/>
-                    <div @click="nextStep(0)" class="flex items-center justify-center select-none px-7 py-2 font-semibold rounded-3xl bg-indigo-600 hover:bg-indigo-700 text-gray-300 cursor-pointer duration-200 m-1">
-                        no
+                <div v-else class="inline-flex justify-between items-center">
+                    <input name="income" v-model="income" class="h-9 w-48 rounded-3xl outline-none"/>
+                    <div @click="nextStep()" class="flex items-center justify-center select-none px-6 py-2 font-semibold rounded-3xl bg-indigo-600 hover:bg-indigo-700 text-gray-300 cursor-pointer duration-200 m-1">
+                        continue
                     </div>
                 </div>
            </div>
@@ -42,6 +42,11 @@
 <script>
 export default {
     name: "Questionaire",
+    data() {
+    return {
+        income: 0,
+        }
+    },
     computed: {
         modalStage(){
             return this.$store.state.modalStage
@@ -51,6 +56,12 @@ export default {
         },
     },
     methods: {
+        nextStepIncome(){
+            const {income} = this
+            this.$store.commit('updateIncome', income)
+            console.log(income)
+            this.$store.commit('updateModalState',this.modalStage)
+        },
         nextStep(answer) {
            this.$store.commit('updateModalState',this.modalStage)
            this.$store.commit('appendQuestion',answer)

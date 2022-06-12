@@ -9,12 +9,12 @@
 <script>
 import Nav from "./components/Nav.vue";
 import Footer from "./components/Footer.vue";
-//import Questionaire from "./components/Questionaire.vue";
+import Questionaire from "./components/Questionaire.vue";
 export default {
   components: {
     Nav,
     Footer,
-//    Questionaire
+    Questionaire
   },
 };
 </script>

@@ -7,6 +7,7 @@ export default createStore({
         showModal: false,
         isLoggedIn: false,
         questionArray: [],
+        userIncome: 0,
     },
     mutations: {
         updateModalState(state) {
@@ -21,8 +22,8 @@ export default createStore({
         settLoggedIn(state, isLoggedIn) {
             state.isLoggedIn = isLoggedIn
         },
-        appendQuestion(state, question) {
-            state.questionArray = state.questionArray.push(question)
+        updateIncome(state, income) {
+            state.userIncome = income
         }
     },
     actions: {},
