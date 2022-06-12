@@ -1,5 +1,13 @@
 <template >
-  <div class="flex flex-grow justify-center items-start bg-gray-100 dark:bg-gray-800">
+  <div
+    class="
+      flex flex-grow
+      justify-center
+      items-start
+      bg-gray-100
+      dark:bg-gray-800
+    "
+  >
     <div
       class="
         container
@@ -152,7 +160,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   name: "Login",
@@ -165,19 +173,20 @@ export default {
   },
   methods: {
     async register() {
-      const { username, password, email} = this;
-      axios.post('http://127.0.0.1:8000/users/login', {
-        username: username,
-        password: password,
-        email: email
-      })
-      .then(function (response) {
-        console.log(response)
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
-    }
+      const { username, password, email } = this;
+      axios
+        .post("http://127.0.0.1:8000/users/login", {
+          username: username,
+          password: password,
+          email: email,
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    },
   },
   components: {},
 };

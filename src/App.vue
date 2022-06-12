@@ -1,8 +1,10 @@
 <template>
-  <div class="inline-flex flex-col justify-between items h-screen w-screen z-50">
+  <div
+    class="inline-flex flex-col justify-between items h-screen w-screen z-50"
+  >
     <Nav></Nav>
     <Questionaire v-if="$store.state.showModal"></Questionaire>
-    <router-view/>
+    <router-view />
     <Footer></Footer>
   </div>
 </template>
@@ -14,7 +16,7 @@ export default {
   components: {
     Nav,
     Footer,
-    Questionaire
+    Questionaire,
   },
 };
 </script>

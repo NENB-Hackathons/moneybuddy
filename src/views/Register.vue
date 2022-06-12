@@ -152,7 +152,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 export default {
   name: "Register",
   data() {
@@ -164,19 +164,20 @@ export default {
   },
   methods: {
     async register() {
-      const { username, password, email} = this;
-      axios.post('http://127.0.0.1:8000/users/register', {
-        username: username,
-        password: password,
-        email: email
-      })
-      .then(function (response) {
-        console.log(response)
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
-    }
+      const { username, password, email } = this;
+      axios
+        .post("http://127.0.0.1:8000/users/register", {
+          username: username,
+          password: password,
+          email: email,
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    },
   },
   components: {},
 };
