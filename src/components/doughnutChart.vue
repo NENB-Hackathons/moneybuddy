@@ -13,10 +13,17 @@
 </template>
 
 <script>
-import { Doughnut } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, ArcElement } from 'chart.js'
+import { Doughnut } from "vue-chartjs";
+import {
+  Chart as ChartJS,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement,
+  CategoryScale,
+} from "chart.js";
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale, ArcElement)
+ChartJS.register(Title, Tooltip, Legend, ArcElement, CategoryScale);
 
 export default {
   name: "DoughnutChart",
@@ -57,7 +64,12 @@ export default {
     return {
       chartData: {
         labels: ["January", "February", "March"],
-        datasets: [{ data: [40, 20, 12] }],
+        datasets: [
+          {
+            backgroundColor: ["#41B883", "#E46651", "#00D8FF", "#DD1B16"],
+            data: [40, 20, 12],
+          },
+        ],
       },
       chartOptions: {
         responsive: true,
