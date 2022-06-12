@@ -16,10 +16,10 @@
       <!-- header -->
       <div class="text-center my-6 dark:rounded-lg">
         <h1 class="text-3xl font-semibold text-gray-700 dark:text-white">
-          Sign Up
+          Log in
         </h1>
         <p class="text-gray-500 dark:text-indigo-500">
-          Register to create an account
+          Log in to access your account
         </p>
       </div>
       <!-- sign-in -->
@@ -142,7 +142,7 @@
               "
               v-on:click="register"
             >
-              Create Account
+              Log in
             </button>
           </div>
         </form>
@@ -153,7 +153,7 @@
 
 <script>
 export default {
-  name: "Register",
+  name: "Login",
   data() {
     return {
       username: "",
@@ -164,7 +164,7 @@ export default {
   methods: {
     async register() {
       const { username, password, email} = this;
-      const res = await fetch("http://127.0.0.1:8000/users/register", {
+      const res = await fetch("http://127.0.0.1:8000/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
