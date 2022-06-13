@@ -14,7 +14,7 @@
     "
   >
     <div class="h-px bg-gray-800 text-gray-300 w-3/4 m-2"></div>
-    All rights reserved.
+    © 2022 MoneyBuddy - "Don't work harder, be financially smarter"
   </div>
 </template>
 <script>
