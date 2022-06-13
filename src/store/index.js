@@ -10,6 +10,7 @@ export default createStore({
             'Do you think about yourself as a saver/investor?',
             'Are you spending money on wants? (eg, electronics, clothes, leisure items, ect..)',
             'Are you the main household earner?',
+            'Are you a student?',
             'Final Question, do you need to spend on others needs? (Food, shelter, ect..)',
         ],
         userIncome: 0,
