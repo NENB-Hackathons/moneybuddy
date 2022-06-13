@@ -1,6 +1,9 @@
 # MoneyBuddy
 
-[![CodeFactor](https://www.codefactor.io/repository/github/nenc-hackathons/onehacks-ii/badge/main)](https://www.codefactor.io/repository/github/nenc-hackathons/onehacks-ii/overview/main)
+<p align="center">
+    <a href="https://www.codefactor.io/repository/github/nenc-hackathons/onehacks-ii/overview/main"><img src="https://www.codefactor.io/repository/github/nenc-hackathons/onehacks-ii/badge/main" alt="CodeFactor" /></a>
+    <a href="https://github.com/NENC-Hackathons/onehacks-ii/blob/main/LICENSE"><img src="https://img.shields.io/github/license/NENC-Hackathons/onehacks-ii" alt="license"></a>
+
 
 MoneyBuddy is a application that helps you be smart with your financials. It was built in 48 hours for the OneHacks2 hackathon. See the [Devpost](https://devpost.com/software/moneybuddy-hwf0um).
 
