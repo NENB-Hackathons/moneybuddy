@@ -22,7 +22,8 @@
     >
       <h2
         class="text-3xl font-extrabold text-black dark:text-white sm:text-4xl"
-      ></h2>
+      >Hi, {{name}}</h2>
+      <h3 v-if="typeOfUser !== undefined" class="font-semibold text-white">Your quiz shows that you are a Average consumer</h3>
       <div class="lg:mt-0 lg:flex-shrink-0">
         <div class="mt-12 inline-flex rounded-md shadow">
             <button
@@ -66,9 +67,14 @@ export default {
   components: {
     DoughnutChart,
   },
+  data() {
+    return {
+      name: localStorage.getItem("username"),
+      typeOfUser: localStorage.getItem("data"),
+    };
+  },
   methods: {
     openQuiz() {
-      console.log(31212)
       store.commit("changeShowModal", true);
     },
   }

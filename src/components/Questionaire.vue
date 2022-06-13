@@ -204,9 +204,18 @@ export default {
         let url = "http://127.0.0.1:8000/users/"+localStorage.getItem("username")+"+/budgetCalculate"
         axios.post(url,{
               "name":localStorage.getItem("username"),
-              "income":this.$store.state.income,
-              "questionsSum":this.$store.state.questionsSum,
-          })
+              "income": Math.random(1.500000),
+              "questionsSum":Math.random(0,1)
+          }).then(() => {
+              let url = "http://127.0.0.1:8000/users/"+localStorage.getItem("username")+"+/get"
+              axios.post(url,{
+                  "token":localStorage.getItem("token"),
+              }).then(response => {
+                  localStorage.setItem("data",response.data)
+              })
+          }).catch(error => {
+              console.log(error);
+          });
       }
     },
   },
