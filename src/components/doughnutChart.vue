@@ -63,11 +63,11 @@ export default {
   data() {
     return {
       chartData: {
-        labels: ["January", "February", "March"],
+        labels: ["Savings", "Needs", "Wants"],
         datasets: [
           {
             backgroundColor: ["#41B883", "#E46651", "#00D8FF", "#DD1B16"],
-            data: [40, 20, 12],
+            data: [0.05,0.35,0.6],
           },
         ],
       },
