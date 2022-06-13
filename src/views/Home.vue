@@ -24,7 +24,7 @@
       </p>
       <div class="lg:mt-0 lg:flex-shrink-0">
         <div class="mt-12 inline-flex rounded-md shadow">
-          <router-link to="/signup">
+          <router-link to="/register">
             <button
               type="button"
               class="
