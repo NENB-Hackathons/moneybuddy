@@ -32,7 +32,7 @@
         >
           budget plan
         </div>
-        <div class="flex items-center h-8 ml-1">to your needs. <div class="ml-2 text-gray-300">step {{$store.state.modalStage}}/6</div></div>
+        <div class="flex items-center h-8 ml-1">to your needs. <div class="ml-2 text-gray-300">step {{$store.state.modalStage}}/7</div></div>
       </div>
       <div
         class="h-11/12 w-full inline-flex flex-col items-center justify-center"
@@ -41,7 +41,7 @@
           {{$store.state.questions[$store.state.modalStage-1]}}
         </div>
         <div
-          v-if="this.$store.state.modalStage < 6 && this.$store.state.modalStage > 1"
+          v-if="this.$store.state.modalStage < 7 && this.$store.state.modalStage > 1"
           class="inline-flex justify-center items-center"
         >
           <div
@@ -113,6 +113,7 @@
             name="income"
             v-model="income"
             class="h-9 w-48 rounded-3xl outline-none px-4"
+            placeholder="Your income"
           />
           <div
             @click="nextStep()"
@@ -186,23 +187,27 @@ export default {
     },
   },
   methods: {
+    close(){
+      this.$store.commit("showModal",false);
+    },
     nextStepIncome() {
       const { income } = this;
       this.$store.commit("updateIncome", income);
-      console.log(income);
       this.$store.commit("updateModalState", this.modalStage);
     },
     nextStep(answer) {
-    if(this.modalStage < 6) {
+    if(this.modalStage < 7) {
         this.$store.commit("updateModalState", this.modalStage);
         this.$store.commit("updateQuestionsSum", answer);
     }else {
         this.$store.commit("showModal", false);
-        let url = "http://127.0.0.1:8000/users/"+this.$store.state.unsername+"+/budgetCalculate"
+        let url = "http://127.0.0.1:8000/users/"+localStorage.getItem("username")+"+/budgetCalculate"
         axios.post(url,{
-            "token":this.$store.state.token
-        })
-    }
+              "name":localStorage.getItem("username"),
+              "income":this.$store.state.income,
+              "questionsSum":this.$store.state.questionsSum,
+          })
+      }
     },
   },
 };

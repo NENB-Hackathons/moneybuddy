@@ -38,13 +38,15 @@
       </router-link>
     </div>
     <div v-else class="flex items-center m-8 font-semibold text-gray-300">
+      <router-link to="dashboard" class="m-4 cursor-pointer hover:text-gray-400">
+        dashboard
+      </router-link>
       <div @click="logout" class="m-2 cursor-pointer hover:text-gray-400">
         logout
       </div>
     </div>
   </div>
 </template>
-
   <script>
   import store from '@/store'
   let loggedin = store.state.isLoggedIn

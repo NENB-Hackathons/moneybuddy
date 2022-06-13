@@ -23,11 +23,10 @@ export default createStore({
             state.questionsSum += answer
         },
         updateModalState(state) {
-            if (state.modalStage < 6) {
+            if (state.modalStage < 7) {
                 state.modalStage += 1
                 return
             }
-            state.showModal = false
         },
         updateToken(state, token) {
             state.token = token
