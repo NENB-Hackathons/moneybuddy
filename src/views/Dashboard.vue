@@ -18,6 +18,7 @@
       <div class="lg:mt-0 lg:flex-shrink-0">
         <div class="mt-12 inline-flex rounded-md shadow">
             <button
+              @click="openQuiz()"
               type="button"
               class="
                 py-4
@@ -37,7 +38,7 @@
                 rounded-lg
               "
             >
-              Take QUiz
+              Take Quiz
             </button>
         </div>
       </div>
@@ -47,11 +48,18 @@
 
 <script>
 import DoughnutChart from "../components/doughnutChart";
+import store from "@/store";
 
 export default {
   name: "Dashboard",
   components: {
     DoughnutChart,
   },
-};
+  methods: {
+    openQuiz() {
+      console.log(31212)
+      store.commit("changeShowModal", true);
+    },
+  }
+}
 </script>

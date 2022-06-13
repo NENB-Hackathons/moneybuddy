@@ -3,7 +3,7 @@ import { createStore } from "vuex"
 export default createStore({
     state: {
         modalStage: 1,
-        showModal: true,
+        showModal: false,
         questionsSum: 0,
         questions: [
             'What is your net yearly salary in USD?',
@@ -31,7 +31,7 @@ export default createStore({
         updateToken(state, token) {
             state.token = token
         },
-        showModal(state, show) {
+        changeShowModal(state, show) {
             state.showModal = show
         },
         setLoggedIn(state, param) {

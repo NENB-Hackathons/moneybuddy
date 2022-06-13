@@ -1,6 +1,6 @@
 <template>
   <div class="flex h-full w-full absolute items-center justify-center">
-    <div class="h-full w-full bg-black opacity-60 absolute z-40"></div>
+    <div class="h-screen w-screen bg-black opacity-60 absolute z-40"></div>
     <div class="inline-flex flex-col bg-gray-800 h-2/3 w-2/3 z-50 rounded-lg">
       <div
         class="
@@ -188,7 +188,7 @@ export default {
   },
   methods: {
     close(){
-      this.$store.commit("showModal",false);
+      this.$store.commit("changeShowModal",false);
     },
     nextStepIncome() {
       const { income } = this;
@@ -200,7 +200,7 @@ export default {
         this.$store.commit("updateModalState", this.modalStage);
         this.$store.commit("updateQuestionsSum", answer);
     }else {
-        this.$store.commit("showModal", false);
+        this.$store.commit("changeShowModal", false);
         let url = "http://127.0.0.1:8000/users/"+localStorage.getItem("username")+"+/budgetCalculate"
         axios.post(url,{
               "name":localStorage.getItem("username"),
