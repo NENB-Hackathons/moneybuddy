@@ -151,7 +151,7 @@
               v-on:click="register"
             >
               Log in
-                <!-- Navigate to dashboard after register -->
+              <!-- Navigate to dashboard after register -->
             </button>
           </div>
         </form>
@@ -162,8 +162,7 @@
 
 <script>
 import axios from "axios";
-import router from '@/router'
-import store from '@/store'
+import store from "@/store";
 
 export default {
   name: "Login",
@@ -176,7 +175,7 @@ export default {
   },
   methods: {
     register() {
-      const { username, password, email } = this
+      const { username, password, email } = this;
       axios
         .post("http://127.0.0.1:8000/users/login", {
           username: username,
@@ -184,20 +183,18 @@ export default {
           email: email,
         })
         .then(function (response) {
-          if(response.data.code === 200) {
-            localStorage.setItem('token', response.data.token)
-            localStorage.setItem('username', response.data.username)
-            localStorage.setItem('isLoggedIn', true)
-            store.commit('setUsername', response.data.username)
-            store.commit('setLoggedIn', true)
-            store.commit('updateToken', response.data.token)
-            router.push('/dashboard')
-          }
+          localStorage.setItem("token", response.data.token);
+          localStorage.setItem("username", response.data.username);
+          localStorage.setItem("isLoggedIn", true);
+          store.commit("setUsername", response.data.username);
+          store.commit("setLoggedIn", true);
+          store.commit("updateToken", response.data.token);
+          window.location.href = '/dashboard'
         })
         .catch(function (error) {
-          console.log(error)
+          console.log(error);
         });
-    }
+    },
   },
   components: {},
 };
