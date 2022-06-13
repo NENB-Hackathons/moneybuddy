@@ -68,7 +68,7 @@
               type="text"
               name="username"
               id="username"
-              placeholder="Your Prefered Username"
+              placeholder="Your preferred username"
               class="
                 w-full
                 px-3
