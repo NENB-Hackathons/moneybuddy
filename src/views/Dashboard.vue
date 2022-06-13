@@ -1,5 +1,14 @@
 <template>
-<div
+  <div
+    class="
+      flex flex-grow
+      justify-center
+      items-start
+      bg-gray-100
+      dark:bg-gray-800
+    "
+  >
+    <div
       class="
         text-center
         w-full
@@ -13,8 +22,7 @@
     >
       <h2
         class="text-3xl font-extrabold text-black dark:text-white sm:text-4xl"
-      >
-      </h2>
+      ></h2>
       <div class="lg:mt-0 lg:flex-shrink-0">
         <div class="mt-12 inline-flex rounded-md shadow">
             <button
@@ -42,8 +50,11 @@
             </button>
         </div>
       </div>
-</div>
-  <DoughnutChart />
+    </div>
+    <div class="w-1/2">
+      <DoughnutChart :width="20" :height="20" />
+    </div>
+  </div>
 </template>
 
 <script>

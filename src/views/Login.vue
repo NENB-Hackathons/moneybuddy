@@ -177,7 +177,7 @@ export default {
     register() {
       const { username, password, email } = this
       axios
-        .post("http://127.0.0.1:8000/users/login", {
+        .post("http://68.147.56.14:8000/users/login", {
           username: username,
           password: password,
           email: email,
