@@ -111,8 +111,8 @@
                       Take our quiz
                     </h3>
                     <p class="text-gray-500 dark:text-gray-300 leading-loose">
-                      Answer questions about your spending, it will only take 5
-                      minutes.
+                      Answer questions about your spending, it will take only 5
+                      minutes or less.
                     </p>
                   </div>
                 </li>
