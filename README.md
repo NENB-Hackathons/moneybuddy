@@ -1,7 +1,6 @@
 # MoneyBuddy
 
 <p align="center">
-    <a href="https://www.codefactor.io/repository/github/NENB-hackathons/moneybuddy/overview/main"><img src="https://www.codefactor.io/repository/github/nenc-hackathons/onehacks-ii/badge/main" alt="CodeFactor" /></a>
     <a href="https://github.com/NENC-Hackathons/onehacks-ii/blob/main/LICENSE"><img src="https://img.shields.io/github/license/NENC-Hackathons/onehacks-ii" alt="license"></a>
 
 
