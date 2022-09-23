@@ -3,7 +3,7 @@
 <p align="center">
 <img src="./src/assets/icon.png" width="300" height="310">
 
-MoneyBuddy is a application that helps you be smart with your financials. It was built in 48 hours for the OneHackII hackathon. See the [Devpost](https://devpost.com/software/moneybuddy-hwf0um) for more info.
+MoneyBuddy is a application that helps you be smart with your financials. It was built in 48 hours for the OneHackii hackathon. See the [Devpost](https://devpost.com/software/moneybuddy-hwf0um) for more info.
 
 ## Installation
 
