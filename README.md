@@ -1,10 +1,9 @@
 # MoneyBuddy
 
 <p align="center">
-    <a href="https://github.com/NENC-Hackathons/onehacks-ii/blob/main/LICENSE"><img src="https://img.shields.io/github/license/NENC-Hackathons/onehacks-ii" alt="license"></a>
+<img src="./src/assets/icon.png" width="300" height="310">
 
-
-MoneyBuddy is a application that helps you be smart with your financials. It was built in 48 hours for the OneHacks2 hackathon. See the [Devpost](https://devpost.com/software/moneybuddy-hwf0um) for more info.
+MoneyBuddy is a application that helps you be smart with your financials. It was built in 48 hours for the OneHackII hackathon. See the [Devpost](https://devpost.com/software/moneybuddy-hwf0um) for more info.
 
 ## Installation
 
